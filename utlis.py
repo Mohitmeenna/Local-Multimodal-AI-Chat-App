@@ -11,7 +11,7 @@ def load_chat_history_json(file_path):
     with open(file_path, "r") as f:
         json_data = json.load(f)
         messages = [HumanMessage(**message) if message["type"] == "human" else AIMessage(**message) for message in json_data]
-        return messages 
-    
+        return messages
+
 def get_timestamp():
-    return datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    return datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
